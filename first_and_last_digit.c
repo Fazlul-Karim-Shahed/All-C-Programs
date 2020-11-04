@@ -14,7 +14,8 @@ int main ()
         else{continue;}
 
     }
-     printf("%d", number);
+     printf("First digit = %d\n", number);
+     printf("Last digit = %d\n", last);
 
 
 
