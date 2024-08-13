@@ -2,20 +2,31 @@
 #include<stdio.h>
 
 int main() {
-    
-    int n, i, j, min;
-    int arr[] = {2, 4, 5, 9, 8, 4, 7, 10};
-    int length = sizeof(arr) / sizeof(arr[0]);
 
-    min = arr[0];
+    int i, j, length, temp;
+    int arr[] = {7, 2, 4, 2, 6, 8, 8, 12, 2, 5, 4, 9};
 
-    for (i = 0; i < length ; i++){
+    length = sizeof(arr) / sizeof(arr[0]);
 
-        if(arr[i] < min){
-            min = arr[i];
+    printf("Length of array: %d \n \n", length);
+
+
+    for (i = 0; i < length; i++)
+    {
+        for (j = 0; j < length; j++){
+            if(arr[j] > arr[j+1]){
+                temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
         }
-
     }
 
-    printf("Min number is - %d \n", min);
+    printf("Updated array: ");
+
+    for (i = 0; i < length; i++){
+        printf("%d ", arr[i]);
+    }
+
+        return 0;
 }
