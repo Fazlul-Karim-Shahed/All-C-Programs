@@ -1,29 +1,26 @@
-
-// 18. Write a program in C for a 2D array of size 3x3 and print the matrix.
+// 23. Write a program in C to find the sum of the right diagonals of a matrix.
 // Test Data :
-// Input elements in the matrix :
+// Input the size of the square matrix : 2
+// Input elements in the first matrix :
 // element - [0],[0] : 1
 // element - [0],[1] : 2
-// element - [0],[2] : 3
-// element - [1],[0] : 4
-// element - [1],[1] : 5
-// element - [1],[2] : 6
-// element - [2],[0] : 7
-// element - [2],[1] : 8
-// element - [2],[2] : 9
+// element - [1],[0] : 3
+// element - [1],[1] : 4
 // Expected Output :
 // The matrix is :
+// 1 2
+// 3 4
+// Addition of the right Diagonal elements is :5
+// Elements in array are:
 
-// 1 2 3
-// 4 5 6
-// 7 8 9
+
 
 
 #include<stdio.h>
 
 int main(){
 
-    int i,j, row, col, pos;
+    int i,j, row, col, sum;
     int matrix[100][100];
 
     printf("Enter row: ");
@@ -43,6 +40,19 @@ int main(){
         
     }
 
+    sum = 0;
+
+    for (i = row-1; i>=0; i--){
+
+        for (j = 0; j < col; j++){
+            if(i==j){
+                sum += matrix[i][j];
+            }
+        }
+
+    }
+
+
     printf("Your entered matrix : \n");
 
     for (i = 0; i <row; i++){
@@ -56,9 +66,6 @@ int main(){
 
     }
 
-
-
-
-
+    printf("Right diagonal of the matrix: %d", sum);
 }
 
